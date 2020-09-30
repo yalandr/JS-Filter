@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Filter</title>
+	<style>
+		* {box-sizing: border-box;}
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial;
+			color: #ddd;
+			background: #606c88;
+			background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);
+			background: linear-gradient(to right, #3f4c6b, #606c88);
+		}
+		.wrapper {
+			
+		}
+		.container {
+			width: 70%;
+			margin: 0 auto;
+		}
+		nav ul li {
+			display: inline-block;
+			padding: .5rem 2rem;
+			border: 1px solid #ddd;
+			border-radius: 6px;
+			margin-right: 16px;
+			cursor: pointer;
+		}
+		.bands-block {width: 100%;}
+		.bands-block__item {
+			min-width: calc(22% - 28px);
+			min-height: 140px;
+			border: 1px solid #ddd;
+			margin: 5px;
+			float: left;
+		}
+		.hide {
+			animation-name: hiding;
+			animation-duration: .8s;
+			animation-fill-mode: forwards;
+		}
+		@keyframes hiding {
+			50% {
+				border-radius: 100%;
+			}
+			100% {
+				opacity: 0;
+				min-height: 0;
+				min-width: 0;
+				padding: 0;
+				margin: 0;
+				border: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<h1>the best rock'n'roll bands of all time</h1>
+			<nav>
+				<ul>
+					<li data-filter="all">ALL</li>
+					<li data-filter="filter60" class="60">60s</li>
+					<li data-filter="filter70" class="70">70s</li>
+					<li data-filter="filter80" class="80">80s</li>
+					<li data-filter="filter90" class="90">90s</li>
+				</ul>
+			</nav>
+			<div class="bands-block">
+				<div class="bands-block__item beatles filter60"></div>
+				<div class="bands-block__item stones filter60"></div>
+				<div class="bands-block__item zeppelin filter60"></div>
+				<div class="bands-block__item hendrix filter60"></div>
+				<div class="bands-block__item pink-floyd filter70"></div>
+				<div class="bands-block__item doors filter70"></div>
+				<div class="bands-block__item deep-purple filter70"></div>
+				<div class="bands-block__item ac-dc filter70"></div>
+				<div class="bands-block__item queen filter80"></div>
+				<div class="bands-block__item kiss filter80"></div>
+				<div class="bands-block__item beatles filter80"></div>
+				<div class="bands-block__item beatles filter80"></div>
+				<div class="bands-block__item nirvana filter90"></div>
+				<div class="bands-block__item metallica filter90"></div>
+				<div class="bands-block__item radiohead filter90"></div>
+				<div class="bands-block__item foo-fighters filter90"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		const bandPoster = document.querySelectorAll('.bands-block__item');
+
+		document.querySelector('nav').addEventListener('click', event => {
+			if (event.target.tagName !== 'LI') return false;
+			let filterClass = event.target.dataset['filter'];
+			bandPoster.forEach( elem => {
+				elem.classList.remove('hide');
+				if (!elem.classList.contains(filterClass) && filterClass !== 'all') {
+					elem.classList.add('hide');
+				}
+			})
+
+		})
+	</script>
+</body>
+</html>
