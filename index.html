@@ -19,7 +19,7 @@
 			
 		}
 		.container {
-			width: 70%;
+			width: 60%;
 			margin: 0 auto;
 		}
 		nav ul li {
@@ -29,23 +29,44 @@
 			border-radius: 6px;
 			margin-right: 16px;
 			cursor: pointer;
+			transition: .3s;
 		}
+		nav ul li:hover {background: #181846;}
 		.bands-block {width: 100%;}
 		.bands-block__item {
-			min-width: calc(22% - 28px);
+			min-width: calc(23%);
 			min-height: 140px;
-			border: 1px solid #ddd;
+			box-shadow: 0 3px 6px #555;
 			margin: 5px;
 			float: left;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
 		}
+		.beatles {background-image: url(img/beatles.webp);}
+		.stones {background-image: url(img/rolling-stones.jpg);}
+		.zeppelin {background-image: url(img/led-zeppelin.webp);}
+		.hendrix {background-image: url(img/hendrix.jpg);}
+		.pink-floyd {background-image: url(img/pink-floyd.jpg);}
+		.doors {background-image: url(img/doors.jpg);}
+		.deep-purple {background-image: url(img/deep-purple.jpg);}
+		.ac-dc {background-image: url(img/acdc.jpg);}
+		.queen {background-image: url(img/queen.jpeg);}
+		.kiss {background-image: url(img/kiss.jpg);}
+		.aerosmith {background-image: url(img/aerosmith.jpg);}
+		.guns-n-roses {background-image: url(img/guns-n-roses.webp);}
+		.nirvana {background-image: url(img/nirvana.jpg);}
+		.metallica {background-image: url(img/metallica.jpg);}
+		.radiohead {background-image: url(img/radiohead.jpg);}
+		.foo-fighters {background-image: url(img/foo-fighters.png);}
 		.hide {
 			animation-name: hiding;
 			animation-duration: .8s;
 			animation-fill-mode: forwards;
 		}
 		@keyframes hiding {
-			50% {
-				border-radius: 100%;
+			80% {
+				border-radius: 200px;
 			}
 			100% {
 				opacity: 0;
@@ -72,22 +93,22 @@
 				</ul>
 			</nav>
 			<div class="bands-block">
-				<div class="bands-block__item beatles filter60"></div>
-				<div class="bands-block__item stones filter60"></div>
-				<div class="bands-block__item zeppelin filter60"></div>
-				<div class="bands-block__item hendrix filter60"></div>
-				<div class="bands-block__item pink-floyd filter70"></div>
-				<div class="bands-block__item doors filter70"></div>
-				<div class="bands-block__item deep-purple filter70"></div>
-				<div class="bands-block__item ac-dc filter70"></div>
-				<div class="bands-block__item queen filter80"></div>
-				<div class="bands-block__item kiss filter80"></div>
-				<div class="bands-block__item beatles filter80"></div>
-				<div class="bands-block__item beatles filter80"></div>
-				<div class="bands-block__item nirvana filter90"></div>
-				<div class="bands-block__item metallica filter90"></div>
-				<div class="bands-block__item radiohead filter90"></div>
 				<div class="bands-block__item foo-fighters filter90"></div>
+				<div class="bands-block__item hendrix filter60"></div>
+				<div class="bands-block__item queen filter80"></div>
+				<div class="bands-block__item pink-floyd filter70"></div>
+				<div class="bands-block__item stones filter60"></div>
+				<div class="bands-block__item nirvana filter90"></div>
+				<div class="bands-block__item zeppelin filter60"></div>
+				<div class="bands-block__item metallica filter90"></div>
+				<div class="bands-block__item deep-purple filter70"></div>
+				<div class="bands-block__item radiohead filter90"></div>
+				<div class="bands-block__item doors filter70"></div>
+				<div class="bands-block__item guns-n-roses filter80"></div>
+				<div class="bands-block__item ac-dc filter70"></div>
+				<div class="bands-block__item kiss filter80"></div>
+				<div class="bands-block__item beatles filter60"></div>
+				<div class="bands-block__item aerosmith filter80"></div>
 			</div>
 		</div>
 	</div>
